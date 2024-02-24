@@ -8,7 +8,7 @@ public class ATM {
   static int incorrectAttempts = 0;
   static String bankName = "Kumari";
 
-ex  public static void main(String[] args) {
+  public static void main(String[] args) {
     System.out.println(
       "------WELCOME TO KUMARI ATM SERVICE------\n\nPlease Enter Your PIN Code below to get started"
     );
