@@ -94,7 +94,7 @@ A volcano periodically blasts. The details are:
     int averageTimeBetweenEruptions = totalTimeBetweenEruptions / (N - 1);
 
     // Predict next occurrence
-    int lastRecordedYear = year[N - 1];
+    int lastRecordedYear = year[N - 1]; 
     int nextOccurrence = lastRecordedYear + averageTimeBetweenEruptions;
 
     System.out.println(
