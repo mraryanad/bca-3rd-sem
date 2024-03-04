@@ -46,9 +46,9 @@ class CementFactory {
     System.out.println(
       "Cement Produced In A Year (kg): " + cementProducedInAYear
     );
-    System.out.println("Total Profit In A Year (kg): " + profitInAYear);
+    System.out.println("Total Profit In A Year: " + profitInAYear);
     System.out.println(
-      "Total Sacks Produced In A Year (kg): " + sacksProducedInAYear
+      "Total Sacks Produced In A Year: " + sacksProducedInAYear
     );
   }
 
