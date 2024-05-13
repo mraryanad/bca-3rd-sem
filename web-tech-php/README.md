@@ -1,6 +1,6 @@
-# Process of running this code
+# WEB-TECH (PHP)
 
-## 1) Install XAMPP and create a DB with necessary tables
+## 1) Installing XAMPP and creating a DB with necessary tables
 
 `FOR WINDOWS`
 
@@ -65,8 +65,6 @@ sudo /opt/lampp/lampp startmysql
 ```
 
 </br>
-</br>
-</br>
 <b>NOTE: IF THE ABOVE METHOD DOES NOT WORK / THROWS A `MISSING DEPENDENCY!` ERROR, DO THE FOLLOWING AND THEN START THE SERVERS AFTER RESTARTING YOUR SYSTEM.</b></br>
 
 ```
@@ -79,9 +77,13 @@ sudo pacman -S libxcrypt-compat
 sudo pacman -S net-tools
 ```
 
-## 2) Create files and folders as required
+</br>
+</br>
 
-Now, you need to go to `/opt/lampp/htdocs` for <b>linux</b> and `C:\xampp\htdocs` for <b>windows</b> and create the following folders and files:</br>
+## 2) Creating Required directories and accessing the content
 
--
--
+Now, go to `/opt/lampp/htdocs` for <b>linux</b> and `C:\xampp\htdocs` for <b>windows</b> and create the following folders and files:</br>
+
+- Create a folder that is to be used as the path. Eg: 'localhost/webtech' will be the path for your 'webtech' folder
+- Create a file named index.php inside the folder. The code written here gets executed when you visit the path.
+- If you create a file named hello.php, You can access it by visiting this path: 'localhost/webtech/hello.php'
