@@ -38,6 +38,7 @@ public class ATM {
           break;
         }
       }
+      scan.close();
     }
   }
 
@@ -76,5 +77,6 @@ public class ATM {
         "\n\n--------------------------------------------------\nInvalid withdraw amount or Insufficient Balance!!!\n--------------------------------------------------\n"
       );
     }
+    scan.close();
   }
 }

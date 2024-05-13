@@ -13,5 +13,7 @@ class AreaOfTriangle {
     float area = 1 / 2 * (length * breadth * height);
 
     System.out.println("Area of Triangle: " + area);
+
+    scan.close();
   }
 }

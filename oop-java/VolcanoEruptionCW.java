@@ -36,6 +36,8 @@ A volcano periodically blasts. The details are:
     storeEruptionData(N);
     calculateAverage();
     predictNextOccurrence();
+
+    scan.close();
   }
 
   public static void storeEruptionData(int N) {
@@ -55,6 +57,8 @@ A volcano periodically blasts. The details are:
       System.out.println("Enter the lava burst height (M): ");
       lavaHeight[i] = scan.nextDouble();
     }
+
+    scan.close();
   }
 
   public static void calculateAverage() {
@@ -94,7 +98,7 @@ A volcano periodically blasts. The details are:
     int averageTimeBetweenEruptions = totalTimeBetweenEruptions / (N - 1);
 
     // Predict next occurrence
-    int lastRecordedYear = year[N - 1]; 
+    int lastRecordedYear = year[N - 1];
     int nextOccurrence = lastRecordedYear + averageTimeBetweenEruptions;
 
     System.out.println(

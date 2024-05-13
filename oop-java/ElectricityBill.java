@@ -9,6 +9,8 @@ class ElectricityBill {
     int consumedUnit = scan.nextInt();
 
     CalculateBill.amntToPay(consumedUnit);
+
+    scan.close();
   }
 }
 

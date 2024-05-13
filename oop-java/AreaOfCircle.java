@@ -12,8 +12,10 @@ class AreaOfCircle {
 
     System.out.println("Area of circle: " + area);
 
-    AreaOfTriangle triangle = new AreaOfTriangle();
-    triangle.area();
-    // AreaOfTriangle.area();
+    // AreaOfTriangle triangle = new AreaOfTriangle();
+    // triangle.area();
+    AreaOfTriangle.area();
+
+    scan.close();
   }
 }

@@ -9,6 +9,8 @@ class HelloWorld {
     int b = sc.nextInt();
 
     System.out.println("\nSum of the two numbers: " + addFunc(a, b));
+
+    sc.close();
   }
 
   public static int addFunc(int a, int b) {

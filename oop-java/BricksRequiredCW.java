@@ -45,6 +45,8 @@ class BricksRequiredCW {
       // To calculate the Transportation Fee Based on different distance
       calculateTransportationFee(noOfTractors);
     }
+
+    scan.close();
   }
 
   public static float tractorsRequired(
@@ -95,5 +97,7 @@ class BricksRequiredCW {
     System.out.println(
       "Transportation Fee: Rs " + (noOfTractors * transportationFee)
     );
+
+    scan.close();
   }
 }
