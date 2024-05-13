@@ -1,5 +1,7 @@
 # Process of running this code
 
+## 1) Install XAMPP and create a DB with necessary tables
+
 `FOR WINDOWS`
 
 - Download and install <b>XAMPP</b>
@@ -22,6 +24,64 @@
     `Go to transaction>structure and configure it in a similar way:`
     <img src = "./Assets/image.png"/>
 
-  </hr>
-  </br>
-  Follow the same steps for linux, except the installation process. The installation process for linux is shown below.
+    </hr>
+    </br>
+
+`FOR LINUX (ARCH)`</br></hr>
+Follow the same steps for linux, except the installation process. The installation process for linux is shown below.
+
+<b>1) Switch to the directory where xampp is stored</b>
+
+```
+cd /media/downloads/linux/
+```
+
+<b>2) Get read/write permissions for the installer</b>
+
+```
+sudo chmod a+wr ./xampp-linux-x64-8.2.4-0-installer.run
+```
+
+<b>3) Run the installer as super user</b>
+
+```
+sudo ./xampp-linux-x64-8.2.4-0-installer.run
+```
+
+<b>4) Start the servers using either of the methods:</b>
+
+```
+sudo /opt/lampp/lampp start
+```
+
+<b>OR</b>
+
+```
+sudo /opt/lampp/lampp startapache
+```
+
+```
+sudo /opt/lampp/lampp startmysql
+```
+
+</br>
+</br>
+</br>
+<b>NOTE: IF THE ABOVE METHOD DOES NOT WORK / THROWS A `MISSING DEPENDENCY!` ERROR, DO THE FOLLOWING AND THEN START THE SERVERS AFTER RESTARTING YOUR SYSTEM.</b></br>
+
+```
+sudo pacman -S libxcrypt-compat
+```
+
+<b>AND</b>
+
+```
+sudo pacman -S net-tools
+```
+
+## 2) Create files and folders as required
+
+Now, you need to go to `/opt/lampp/htdocs` for <b>linux</b> and `C:\xampp\htdocs` for <b>windows</b> and create the following folders and files:</br>
+
+-
+-
