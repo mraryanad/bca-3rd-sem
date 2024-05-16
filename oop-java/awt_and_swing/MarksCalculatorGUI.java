@@ -2,32 +2,6 @@
 //  Input name, subject, marks and calculate and print percent and fail/pass from GUI
 //  */
 
-// import javax.swing.*;
-// import java.awt.*;
-
-// public class MarksCalculatorGUI extends JFrame {
-
-//     private JTextField textField;
-//     private JButton submitButton;
-
-//     MarksCalculatorGUI() {
-//         setTitle("Result Calculator");
-//         textField = new JTextField("");
-//         submitButton = new JButton("Enter");
-
-//         // Add Panels to the Frame and make them visible
-//         add(textField);
-//         add(submitButton);
-//         pack();
-//         setLocationRelativeTo(null);
-//         setVisible(true);
-//     }
-
-//     public static void main(String[] args) {
-//         new MarksCalculatorGUI();
-//     }
-// }
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -90,11 +64,17 @@ public class MarksCalculatorGUI extends JFrame implements ActionListener {
             String subject = subjectField.getText();
             int marks = Integer.parseInt(marksField.getText());
 
-            double percentage = (marks / 100.0) * 100; // Assuming total marks is 100
+            double percentage = (marks / 100.0) * 100; // let total marks be 100
             String result = percentage >= 40 ? "Pass" : "Fail";
 
             // Display result
-            resultLabel.setText(name + " in " + subject + ": " + percentage + "% - " + result);
+            if (result.equals("Pass")) {
+                resultLabel.setForeground(Color.GREEN);
+                resultLabel.setText(name + " passed in " + subject + " ( " + percentage + "% - " + result + " )");
+            } else {
+                resultLabel.setForeground(Color.RED);
+                resultLabel.setText(name + " failed in " + subject + " ( " + percentage + "% - " + result + " )");
+            }
         }
     }
 }
