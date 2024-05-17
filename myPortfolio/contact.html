@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage | Web Tech</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="nav-bar">
+        <div class="logo">
+          <h5>
+            <a href="" class="logo-text">ARYAN</a>
+          </h5>
+        </div>
+
+        <nav>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-anchor" href="/">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-anchor" href="/about.html">About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-anchor" href="/portfolio.html">Portfolio </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-anchor" href="/experience.html">Experience </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-anchor" href="/skills.html">Skills </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main style="margin-top: 100px">
+      <!-- contact form  -->
+      <div class="contact-section">
+        <div class="content">
+          <h4>For more details</h4>
+          <ul>
+            <li>Email: info@aryan.com.np</li>
+            <li>Phone: +977 98456123789</li>
+          </ul>
+        </div>
+        <div class="form-section">
+          <form action="">
+            <div class="form-group name">
+              <div class="first-name">
+                <label for="first_name">First Name</label>
+                <input type="text" />
+              </div>
+              <div class="last-name">
+                <label for="last_name">Last Name</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" />
+            </div>
+            <div class="form-group">
+              <label for="phone_number">Phone Number</label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- contact forms -->
+    </main>
+
+    <style>
+      .contact-section {
+        display: flex;
+        align-items: start;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      .form-group {
+        margin-bottom: 10px;
+      }
+
+      .form-group textarea {
+        width: 100%;
+      }
+
+      .form-group label {
+        display: block;
+      }
+
+      .form-group input {
+        width: 100%;
+      }
+
+      .name {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+    </style>
+
+    <footer></footer>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>
