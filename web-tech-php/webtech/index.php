@@ -1,23 +1,32 @@
 <?php
-include './services/ledgerServices/fetchLedger.php';
-
-// Start output buffering to capture content not found
+include "./services/ledgerServices/fetchLedger.php";
 ob_start();
 ?>
 
-<form action="">
-    <div class="row">
-        <div class="col-lg-6">
-            <label for="Ledger Name"></label>
-            <input type="text" class="form-control">
-        </div>
-    </div>
-</form>
+<h5 class="mt-5">All ledger list</h5>
+<table class="table mt-2" border="1">
+    <thead>
+        <tr>
+            <th scope="col">SN</th>
+            <th scope="col">Ledger name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
 
-<?php 
-// Get the content and clean the output buffer
-$content = ob_get_clean();
+    <tbody>
+        <?php
+	foreach($ledger_data as $row){
+		echo "<tr>";
+		echo "<th scope='row'>".$row['id']."</th>";
+		echo "<td>".$row['entity']."</td>";
+		echo "<td><button type='button' class='btn btn-primary'>Edit</button></td>";
+		echo "</tr>";
+	}
+	?>
+    </tbody>
+</table>
 
-// Include the layout file with the content
-include 'layout.php'
+<?php
+ $content = ob_get_clean();
+include 'layout.php';
 ?>

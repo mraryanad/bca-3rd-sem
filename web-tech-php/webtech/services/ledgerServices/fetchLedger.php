@@ -24,5 +24,4 @@ if($result->num_rows>0){
        $ledger_data[] = $row; 
     }
 }
-echo $ledger_data;
 $conn->close();

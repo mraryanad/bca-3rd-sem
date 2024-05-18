@@ -24,5 +24,4 @@ if($result->num_rows>0){
        $transaction_data[] = $row; 
     }
 }
-echo $transaction_data;
 $conn->close();

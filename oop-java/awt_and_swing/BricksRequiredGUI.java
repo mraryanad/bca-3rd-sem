@@ -1,14 +1,33 @@
-public class BricksRequiredGUI {
-    /*
-     * QUESTION:
-     * - wall = 10ft x 15ft
-     * - brick = 12cm x 15cm
-     * 1) 500pcs brick fit in a tractor. How many tractor needed to build the wall?
-     * 2) if tractor travels below 10km then Rs 300 is the fee, (10-20)km = Rs 350,
-     * above 20km = Rs 500
-     * 
-     * NEW TASK:
-     * Make GUI for this
-     */
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+
+public class BricksRequiredGUI extends JFrame implements ActionListener {
+    private JLabel wallLengthLabel;
+    private JLabel wallBreadthLabel;
+    private JLabel brickLengthLabel;
+    private JLabel brickBreadthLabel;
+    private JLabel noOfTractorsLabel;
+    private JLabel transportationFeeLabel;
+    private JLabel distanceTraveledLabel;
+    private JTextField wallLengthField;
+    private JTextField wallBreadthField;
+    private JTextField brickLengthField;
+    private JTextField brickBreadthField;
+
+    BricksRequiredGUI() {
+
+        setTitle("Sales Management Software | Bricks Udhyog");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setLayout(new GridLayout(2, 2));
+        setLocation(null);
+        pack();
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new BricksRequiredGUI();
+    }
 
 }
