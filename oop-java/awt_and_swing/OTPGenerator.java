@@ -5,25 +5,25 @@ import java.security.SecureRandom;
 import javax.swing.*;
 
 public class OTPGenerator extends JFrame implements ActionListener {
-
-    private JButton generateButton;
-    private JLabel outputLabel;
+    private static OTPGenerator instance;
+    final private JButton generateButton;
+    final private JLabel outputLabel;
 
     OTPGenerator() {
+        instance = this;
         setTitle("OTP Generator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         generateButton = new JButton("Generate OTP");
         outputLabel = new JLabel("");
 
-        generateButton.addActionListener(this);
+        generateButton.addActionListener(instance);
 
         add(generateButton);
         add(outputLabel);
 
         setLayout(new GridLayout(2, 1));
         setLocationRelativeTo(null);
-        // setSize(400, 200);
         setVisible(true);
         pack();
     }
@@ -49,6 +49,7 @@ public class OTPGenerator extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new OTPGenerator();
+        OTPGenerator otpGen = new OTPGenerator();
+        otpGen.setVisible(true);
     }
 }
