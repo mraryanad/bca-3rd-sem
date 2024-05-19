@@ -113,12 +113,13 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
 
 public class MarksCalculatorGUI extends JFrame implements ActionListener {
-
-    private JTextField nameField, mathMarksField, dsaMarksField, sadMarksField, oopMarksField, webMarksField;
-    private JButton submitButton;
-    private JLabel resultLabel;
+    private static MarksCalculatorGUI instance;
+    final private JTextField nameField, mathMarksField, dsaMarksField, sadMarksField, oopMarksField, webMarksField;
+    final private JButton submitButton;
+    final private JLabel resultLabel;
 
     MarksCalculatorGUI() {
+        instance = this;
         setTitle("Result Calculator");
 
         // Create text fields for name, subject, and marks
@@ -131,7 +132,6 @@ public class MarksCalculatorGUI extends JFrame implements ActionListener {
 
         // Create button and result label
         submitButton = new JButton("Calculate");
-        submitButton.addActionListener(this);
         resultLabel = new JLabel("");
 
         // Create a panel for input fields
@@ -147,10 +147,12 @@ public class MarksCalculatorGUI extends JFrame implements ActionListener {
         inputPanel.add(sadMarksField);
         inputPanel.add(new JLabel("OOP:"));
         inputPanel.add(oopMarksField);
-        inputPanel.add(new JLabel("WEBTECH:"));
+        inputPanel.add(new JLabel("WEB TECH:"));
         inputPanel.add(webMarksField);
         inputPanel.add(new JLabel(""));
         inputPanel.add(submitButton);
+
+        submitButton.addActionListener(MarksCalculatorGUI.instance);
 
         // Create a panel for the result
         JPanel resultPanel = new JPanel();
@@ -208,7 +210,8 @@ public class MarksCalculatorGUI extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new MarksCalculatorGUI();
+        MarksCalculatorGUI mcGUI = new MarksCalculatorGUI();
+        mcGUI.setVisible(true);
     }
 
     @Override

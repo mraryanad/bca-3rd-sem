@@ -10,9 +10,9 @@ public class DynamicButton {
 }
 
 class DynamicButtonUI {
-    private JFrame frame;
-    private JTextField textField;
-    private JPanel buttonPanel;
+    final private JFrame frame;
+    final private JTextField textField;
+    final private JPanel buttonPanel;
 
     DynamicButtonUI() {
         // Create the frame
