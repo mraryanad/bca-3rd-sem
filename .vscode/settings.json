@@ -1,3 +1,9 @@
 {
-  "java.debug.settings.onBuildFailureProceed": true
+  "java.debug.settings.onBuildFailureProceed": true,
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "c:\\Users\\mrad\\Downloads\\mysql-connector-j-8.4.0\\mysql-connector-j-8.4.0\\mysql-connector-j-8.4.0.jar"
+  ],
+  "java.dependency.syncWithFolderExplorer": true,
+  "java.dependency.packagePresentation": "flat"
 }

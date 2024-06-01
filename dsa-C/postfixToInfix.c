@@ -1,65 +1,123 @@
-// postfix to infix DSA
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
-#define MAX_SIZE 100
+// Define the maximum size of the stack
+#define MAX 100
 
-char stack[MAX_SIZE];
-int top = -1;
-
-void push(char c)
+// Stack structure
+typedef struct
 {
-    stack[++top] = c;
+    char *items[MAX];
+    int top;
+} Stack;
+
+// Function to initialize the stack
+void initStack(Stack *s)
+{
+    s->top = -1;
 }
 
-char pop()
+// Function to check if the stack is empty
+int isEmpty(Stack *s)
 {
-    return stack[top--];
+    return s->top == -1;
 }
 
-int isOperator(char c)
+// Function to check if the stack is full
+int isFull(Stack *s)
 {
-    return (c == '+' || c == '-' || c == '*' || c == '/' || c == '^');
+    return s->top == MAX - 1;
 }
 
-void convertPostfixToInfix(char postfix[])
+// Function to push an element onto the stack
+void push(Stack *s, char *item)
 {
-    char infix[MAX_SIZE] = "";
-    int i, j;
-
-    for (i = 0; postfix[i] != '\0'; i++)
+    if (isFull(s))
     {
-        char c = postfix[i];
+        printf("Stack overflow\n");
+        exit(EXIT_FAILURE);
+    }
+    s->items[++s->top] = item;
+}
 
-        if (isOperator(c))
+// Function to pop an element from the stack
+char *pop(Stack *s)
+{
+    if (isEmpty(s))
+    {
+        printf("Stack underflow\n");
+        exit(EXIT_FAILURE);
+    }
+    return s->items[s->top--];
+}
+
+// Function to create a new string from two operands and an operator
+char *createInfix(char *op1, char *op2, char op)
+{
+    char *infix = (char *)malloc(strlen(op1) + strlen(op2) + 4);
+    if (!infix)
+    {
+        printf("Memory allocation error\n");
+        exit(EXIT_FAILURE);
+    }
+    sprintf(infix, "(%s%c%s)", op1, op, op2);
+    return infix;
+}
+
+// Function to check if a character is an operator
+int isOperator(char ch)
+{
+    return ch == '+' || ch == '-' || ch == '*' || ch == '/';
+}
+
+// Function to convert postfix to infix
+char *postfixToInfix(char *postfix)
+{
+    Stack s;
+    initStack(&s);
+
+    for (int i = 0; postfix[i] != '\0'; i++)
+    {
+        char ch = postfix[i];
+
+        if (isalnum(ch))
         {
-            char op1 = pop();
-            char op2 = pop();
-            char temp[MAX_SIZE];
-            sprintf(temp, "(%c%c%c)", op2, c, op1);
-            strcat(infix, temp);
-            push(temp[0]);
+            char *operand = (char *)malloc(2);
+            if (!operand)
+            {
+                printf("Memory allocation error\n");
+                exit(EXIT_FAILURE);
+            }
+            operand[0] = ch;
+            operand[1] = '\0';
+            push(&s, operand);
         }
-        else
+        else if (isOperator(ch))
         {
-            char temp[2] = {c, '\0'};
-            push(c);
-            strcat(infix, temp);
+            char *op2 = pop(&s);
+            char *op1 = pop(&s);
+            char *infix = createInfix(op1, op2, ch);
+            push(&s, infix);
+            free(op1);
+            free(op2);
         }
     }
 
-    printf("Infix expression: %s\n", infix);
+    char *result = pop(&s);
+    return result;
 }
 
 int main()
 {
-    char postfix[MAX_SIZE];
+    char postfix[MAX];
     printf("Enter a postfix expression: ");
     scanf("%s", postfix);
 
-    convertPostfixToInfix(postfix);
+    char *infix = postfixToInfix(postfix);
+    printf("Infix expression: %s\n", infix);
 
+    free(infix);
     return 0;
 }
