@@ -25,7 +25,13 @@ ob_start();
 		echo "<tr>";
 		echo "<th scope='row'>".$row['id']."</th>";
 		echo "<td>".$row['entity']."</td>";
-		echo "<td><button type='button' class='btn btn-primary'>Edit</button></td>";
+		echo "<td>
+                <button type='button' class='btn btn-primary'>Edit</button>
+                <form style='display:inline;' action='./services/ledgerServices/deleteLedger.php' method='post'>
+                    <input type='hidden' name='id' value='".$row['id']."'>
+                    <button type='submit' class='btn btn-danger'>Delete</button>
+                </form>
+            </td>";
 		echo "</tr>";
 	}
 	?>

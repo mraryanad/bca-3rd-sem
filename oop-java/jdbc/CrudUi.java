@@ -107,7 +107,7 @@ public class CrudUi extends JFrame implements ActionListener {
     public CrudUi() {
         instance = this;
         setTitle("CRUD UI App");
-        setSize(800, 600);
+        // setSize(400, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         nameLabel = new JLabel("Enter Name: ");
@@ -120,7 +120,7 @@ public class CrudUi extends JFrame implements ActionListener {
         idTextField = new JTextField(20);
 
         resultLabel = new JLabel("");
-        resultTextArea = new JTextArea(10, 50);
+        resultTextArea = new JTextArea(8, 50);
         resultTextArea.setEditable(false);
 
         insertButton = new JButton("Insert");
@@ -150,6 +150,7 @@ public class CrudUi extends JFrame implements ActionListener {
         deleteButton.addActionListener(CrudUi.instance);
         readButton.addActionListener(CrudUi.instance);
 
+        pack();
         setLocationRelativeTo(null);
     }
 

@@ -50,8 +50,14 @@ ob_start();
 		echo "<td>".$row['is_debit_or_credit']."</td>";
 		echo "<td>".$row['amount']."</td>";
 		echo "<td>".$row['ledger_id']."</td>";
-        echo "<td><button type='button' class='btn btn-primary'>Edit</button></td>";
-		echo "</tr>";
+        echo "<td>
+                <button type='button' class='btn btn-primary'>Edit</button>
+                <form style='display:inline;' action='./services/transactionServices/deleteTransaction.php' method='post'>
+                    <input type='hidden' name='id' value='".$row['id']."'>
+                    <button type='submit' class='btn btn-danger'>Delete</button>
+                </form>
+            </td>";
+        echo "</tr>";
 	}
 	?>
     </tbody>
