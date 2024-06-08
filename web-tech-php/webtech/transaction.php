@@ -1,6 +1,6 @@
 <?php
 include "./services/transactionServices/fetchTransaction.php";
-include "./services/ledgerServices/fetchLedger.php";
+include "./services/ledgerServices/readLedger.php";
 ob_start();
 ?>
 
@@ -51,11 +51,12 @@ ob_start();
 		echo "<td>".$row['amount']."</td>";
 		echo "<td>".$row['ledger_id']."</td>";
         echo "<td>
-                <button type='button' class='btn btn-primary'>Edit</button>
-                <form style='display:inline;' action='./services/transactionServices/deleteTransaction.php' method='post'>
-                    <input type='hidden' name='id' value='".$row['id']."'>
+                <a href='edit.transaction.php?transaction_id=".$row['id']."'>
+                    <button type='button' class='btn btn-primary'>Edit</button>
+                </a>
+                <a href='./services/transactionServices/deleteTransaction.php?transaction_id=".$row['id']."'>
                     <button type='submit' class='btn btn-danger'>Delete</button>
-                </form>
+                </a>
             </td>";
         echo "</tr>";
 	}

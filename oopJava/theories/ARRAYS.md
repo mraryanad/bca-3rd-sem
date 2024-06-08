@@ -102,3 +102,44 @@ int [][] twoDimensionalArray= {
 System.out.println(twoDimensionalArray[0][2]); // Prints "3"
 System.out.println(twoDimensionalArray[1][4]); // Prints "0"
 ```
+
+## Wrapper Classes
+
+Wrapper classes provide a way to use primitive data types (int, boolean, etc) as objects.
+
+<table border>
+    <thead>
+        <td>Primitive Data Type</td>
+        <td>Wrapper Class</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td>int</td>
+            <td>Integer</td>
+        </tr>
+        <tr>
+            <td>double</td>
+            <td>Double</td>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>Character</td>
+        </tr>
+    </tbody>
+</table>
+
+`Example: `
+
+```
+public class WrapperExample {
+    public static void main(String[] args) {
+        Integer myInt = 5;
+        Double myDouble = 5.99;
+        Character myChar = 'A';
+
+        System.out.println(myInt);
+        System.out.println(myDouble);
+        System.out.println(myChar);
+    }
+}
+```

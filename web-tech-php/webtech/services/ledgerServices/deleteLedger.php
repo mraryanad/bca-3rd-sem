@@ -13,19 +13,25 @@ if($conn->connect_error){
     die("Connection Error: ".$conn->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Fetch the ledger ID from the request
-    $ledger_id = $_POST['id'];
+// Check if the id parameter is provided
+if(isset($_GET['ledger_id'])){
+    $ledger_id = $_GET['ledger_id'];
 
-    // Run the delete query
-    $sql = "DELETE FROM ledger WHERE id='$ledger_id'";
-    $result = $conn->query($sql);
+    // Prepare the SQL query to delete the ledger entry
+    $delete_ledger_query = "DELETE FROM `ledger` WHERE `id` = $ledger_id";
+    $delete_ledger_result = $conn->query($delete_ledger_query);
 
-    // If success return back
-    if($result == true){
+    // Execute the query and check if it was successful
+    if($delete_ledger_result == true){
         header('Location: /webtech/index.php');
+    } else {
+        echo "Error deleting ledger entry: ".$stmt->error;
     }
-
-    $conn->close();
+    
+    // Close the statement
+    $stmt->close();
+} else {
+    echo "NO ID PROVIDED!!!";
 }
+    
 $conn->close();

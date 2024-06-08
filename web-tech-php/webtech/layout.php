@@ -22,8 +22,9 @@ function linkToTransaction() {
 
 <body class="container mt-5">
     <header>
-        <nav class="navbar bg-body-tertiary">
-            <form class="container-fluid justify-content-start">
+        <nav class="navbar">
+            <form class="container justify-content-start">
+                <h1 style="margin-right: 30px;">Debit Credit Tracker</h1>
                 <button class="btn btn-outline-success me-2" type="button" onclick="linkToIndex()">
                     Home
                 </button>
@@ -34,7 +35,7 @@ function linkToTransaction() {
         </nav>
     </header>
 
-    <main>
+    <main style="margin: 10px 40px;">
         <?php 
     echo $content;
      ?>

@@ -1,9 +1,9 @@
 <?php
-include "./services/ledgerServices/fetchLedger.php";
+include "./services/ledgerServices/readLedger.php";
 ob_start();
 ?>
 
-<form action="./services/ledgerServices/addLedger.php" method="post">
+<form action="./services/ledgerServices/createLedger.php" method="post">
     <label style="display: block;" for="">Ledger Name </label>
     <input style="display: block; margin-bottom: 10px;" type="text" name="entity">
     <button class="btn btn-success" type="submit">Submit</button>
@@ -21,20 +21,23 @@ ob_start();
 
     <tbody>
         <?php
-	foreach($ledger_data as $row){
-		echo "<tr>";
-		echo "<th scope='row'>".$row['id']."</th>";
-		echo "<td>".$row['entity']."</td>";
-		echo "<td>
-                <button type='button' class='btn btn-primary'>Edit</button>
-                <form style='display:inline;' action='./services/ledgerServices/deleteLedger.php' method='post'>
-                    <input type='hidden' name='id' value='".$row['id']."'>
-                    <button type='submit' class='btn btn-danger'>Delete</button>
-                </form>
-            </td>";
-		echo "</tr>";
-	}
-	?>
+	        foreach($ledger_data as $row){
+	        	echo "<tr>";
+	        	echo "<th scope='row'>".$row['id']."</th>";
+	        	echo "<td>".$row['entity']."</td>";
+
+                
+	        	echo "<td>
+                        <a href='edit.ledger.php?ledger_id=".$row['id']."'>
+                            <button type='button' class='btn btn-primary'>Edit</button>
+                        </a>
+                        <a href='./services/ledgerServices/deleteLedger.php?ledger_id=".$row['id']."'>
+                            <button type='submit' class='btn btn-danger'>Delete</button>
+                        </a>
+                        </td>";
+                echo "</tr>";
+                }
+        ?>
     </tbody>
 </table>
 
