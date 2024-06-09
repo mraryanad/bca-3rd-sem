@@ -28,7 +28,7 @@ ob_start();
 
                 
 	        	echo "<td>
-                        <a href='edit.ledger.php?ledger_id=".$row['id']."'>
+                        <a href='editLedger.php?ledger_id=".$row['id']."'>
                             <button type='button' class='btn btn-primary'>Edit</button>
                         </a>
                         <a href='./services/ledgerServices/deleteLedger.php?ledger_id=".$row['id']."'>

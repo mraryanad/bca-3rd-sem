@@ -13,6 +13,18 @@ if($conn->connect_error){
     die("Connection Error: ".$conn->connect_error);
 }
 
+// Check if the ID Parameter and form data are provided
+if(isset($_GET['ledger_id'])) {
+    $ledger_id = intval($_GET['ledger_id']);
+    $entity = $_POST['entity'];
 
+    $update_ledger_query = "UPDATE `ledger` SET `entity` = '$entity' WHERE `id` = $ledger_id";
+    $stmt = $conn->query($update_ledger_query);
+
+    if($stmt == true){
+        header('Location: /webtech/index.php');
+        exit();
+    }
+}
 
 $conn->close();
