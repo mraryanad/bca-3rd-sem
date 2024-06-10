@@ -1,10 +1,10 @@
 <?php
-include "./services/transactionServices/fetchTransaction.php";
+include "./services/transactionServices/readTransaction.php";
 include "./services/ledgerServices/readLedger.php";
 ob_start();
 ?>
 
-<form action="./services/transactionServices/addTransaction.php" method="post">
+<form action="./services/transactionServices/createTransaction.php" method="post">
     <label style="display: block;" for=""> Select Debit or Credit</label>
     <select style="display: block; margin-bottom: 10px;" type="text" name="is_debit_or_credit">
         <option value="">--Select One Below--</option>
@@ -51,7 +51,7 @@ ob_start();
 		echo "<td>".$row['amount']."</td>";
 		echo "<td>".$row['ledger_id']."</td>";
         echo "<td>
-                <a href='edit.transaction.php?transaction_id=".$row['id']."'>
+                <a href='editTransaction.php?transaction_id=".$row['id']."'>
                     <button type='button' class='btn btn-primary'>Edit</button>
                 </a>
                 <a href='./services/transactionServices/deleteTransaction.php?transaction_id=".$row['id']."'>
