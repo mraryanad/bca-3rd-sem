@@ -1,5 +1,5 @@
 // WAP to check palindrome of a given number
-package oopJava.labReport;
+package labReport;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class Palindrome {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Enter a number to check if its palindrome: ");
+        System.out.println("Enter a number to check if it is palindrome: ");
         int n = scan.nextInt();
 
         int temp = n;
@@ -22,6 +22,8 @@ public class Palindrome {
         } else {
             System.out.println("Not Palindrome");
         }
+
+        scan.close();
     }
 
 }

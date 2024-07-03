@@ -9,3 +9,4 @@
 - WAP to demonstrate keyboard, mouse and action listeners
 - WAP showing CRUD with jdbc (UI) recording the following information:
   `staffId, staffName, staffContact, staffSalary, staffAddress, dateOfEntry, author`
+- WAP to show String Manipulation Methods
