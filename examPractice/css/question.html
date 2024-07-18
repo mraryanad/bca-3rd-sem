@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML and CSS</title>
+    <style>
+      .link {
+        color: blue;
+      }
+      .link:visited {
+        color: red;
+      }
+
+      tbody > tr:nth-child(odd) {
+        color: white;
+        background: pink;
+      }
+      tbody > tr:nth-child(even) {
+        color: white;
+        background: blue;
+      }
+
+      .green {
+        color: green;
+      }
+      .indentation {
+        text-indent: 2cm;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>link</h1>
+    <a class="link" href="https://www.google.com">Visit Google</a>
+
+    <h1>table</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Age</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aryan</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>Ariyan</td>
+          <td>18</td>
+        </tr>
+        <tr>
+          <td>RN</td>
+          <td>29</td>
+        </tr>
+        <tr>
+          <td>IRON</td>
+          <td>23</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>texts</h1>
+    <p class="green">green</p>
+    <p class="indentation">indentation</p>
+    <p class="uppercase">uppercase</p>
+  </body>
+</html>

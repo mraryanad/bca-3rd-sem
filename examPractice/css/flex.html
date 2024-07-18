@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Div Flex</title>
+    <style>
+      .box {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 200px;
+        border: 1px solid black;
+      }
+      .box > .first {
+        border: 1px solid black;
+        width: 100%;
+        height: 30px;
+      }
+      .box > .second {
+        border: 1px solid black;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box > .third {
+        border: 1px solid black;
+        width: 100%;
+        height: 50px;
+      }
+      .box > .fourth {
+        border: 1px solid black;
+        width: 100%;
+        height: 60px;
+        display: flex;
+      }
+      .box > .fourth > .first {
+        border-right: 1px solid black;
+        width: 30%;
+        display: flex;
+        align-items: flex-end;
+      }
+      .box > .fourth > .second {
+        border-left: 1px solid black;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .box > .fifth {
+        border: 1px solid black;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <div class="first">Logo</div>
+      <div class="second">Navigation</div>
+      <div class="third">Header Banner</div>
+      <div class="fourth">
+        <div class="first">Side Bar</div>
+        <div class="second">Body Area</div>
+      </div>
+      <div class="fifth">Footer</div>
+    </div>
+  </body>
+</html>
